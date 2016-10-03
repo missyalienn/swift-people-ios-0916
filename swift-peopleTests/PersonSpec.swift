@@ -8,14 +8,15 @@ class PersonSpec: QuickSpec {
     override func spec() {
         describe("Person") {
             
-            var joe = Person()
-            var tim = Person()
-            var jim = Person()
-            var tom = Person()
-            var mark = Person()
+            var joe =  Person.init(name: "Joe", ageInYears: 25)
+            var  tim = Person.init(name: "Tim", ageInYears: 65535)
+            var jim = Person.init(name: "Jim", ageInYears: nil)
+            var tom = Person.init(name: "Tom", ageInYears: nil)
+            var mark = Person.init(name: "Mark", ageInYears: 29)
+          
             
-            var jenny = Person()
-            var johnDoe = Person()
+            var jenny = Person(name: "Jenny")
+            var johnDoe = Person(name: "John Doe", ageInYears: nil)
             
             beforeEach() {
                 joe = Person.init(name: "Joe", ageInYears: 25)
@@ -25,7 +26,7 @@ class PersonSpec: QuickSpec {
                 mark = Person.init(name: "Mark", ageInYears: 29)
             
                 jenny = Person(name: "Jenny")
-                johnDoe = Person()
+                johnDoe = Person(name: "John Doe", ageInYears: nil)
             }
             
             describe("designated initializer") {
